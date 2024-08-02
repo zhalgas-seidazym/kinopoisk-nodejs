@@ -31,6 +31,7 @@ passport.use(new localStrategy({
     )
 )
 
+// https://console.cloud.google.com/apis/credentials?project=kinopoisk-430723   google cloud
 passport.use(new GoogleStrategy({
     clientID: '1093781711183-li3emkltsh1p1lo43iu6rtmuvsiuord8.apps.googleusercontent.com',
     clientSecret: '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',

@@ -31,8 +31,8 @@ app.use(require('./server/auth/router.js'))
 app.use(require('./server/films/router.js'))
 app.use(require('./server/rates/router.js'))
 
-
-
+// https://kinopoisk-node-js.onrender.com/ deploy
+// https://dashboard.render.com/web/srv-cqmltqtds78s73914k20/deploys/dep-cqmm055svqrc73fcfgsg  render
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`)
