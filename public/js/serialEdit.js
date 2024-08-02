@@ -1,9 +1,7 @@
-let addFilmUrlBtn = document.querySelector('#addFilmUrlBtn')
-let addSeriesBtn = document.querySelector('#addSeriesBtn')
 let urls = document.querySelector('#urls')
 
-function addSeries(){
-    addFilmUrlBtn.style.display = 'none'
+function add(){
+    console.log('work')
     let number = document.querySelectorAll('.series').length + 1
     
     let newSeries = document.createElement('fieldset')
@@ -21,15 +19,4 @@ function addSeries(){
     newSeries.appendChild(seriesInput)
     
     urls.appendChild(newSeries)
-}
-
-function addFilmUrl(){
-    addSeriesBtn.style.display = 'none'
-    urls.innerHTML = 
-    `
-    <fieldset class="fieldset" id="filmUrl">
-        <label for="">Ссылка на фильм</label>
-        <input type="text" placeholder="Введите ссылку на фильм" name="video">
-    </fieldset>
-    `
 }

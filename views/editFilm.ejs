@@ -64,7 +64,7 @@
                     </select>
                 </fieldset>
                 <% if(film.video && film.video.length > 2){ %>
-                    <a class="add-series-btn" id="addFilmUrlBtn" onclick="addFilmUrl()">Добавить ссылку на фильм</a>
+                    <a class="add-series-btn" id="addFilmUrlBtn">Добавить ссылку на фильм</a>
                     <div id="urls">
                         <fieldset class="fieldset">
                             <label for="">Ссылка на фильм</label>
@@ -72,7 +72,7 @@
                         </fieldset>
                     </div>
                 <% }else if(film.series && film.series.length > 0){ %>
-                    <a class="add-series-btn" id="addSeriesBtn" onclick="addSeries()">Добавить серии</a>
+                    <a class="add-series-btn" id="addSeriesBtn" onclick="add()">Добавить серии</a>
                     <div id="urls">
                         <% film.series.forEach((s, i) => { %>
                             <fieldset class="series">
