@@ -1,7 +1,5 @@
-let urls = document.querySelector('#urls')
 
-function add(){
-    console.log('work')
+function addSeriesEdit(){
     let number = document.querySelectorAll('.series').length + 1
     
     let newSeries = document.createElement('fieldset')
