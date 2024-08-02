@@ -34,7 +34,7 @@ passport.use(new localStrategy({
 passport.use(new GoogleStrategy({
     clientID: '1093781711183-li3emkltsh1p1lo43iu6rtmuvsiuord8.apps.googleusercontent.com',
     clientSecret: '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',
-    callbackURL: "http://localhost:8000/api/auth/google",
+    callbackURL: "https://kinopoisk-node-js.onrender.com/api/auth/google",
     scope: ['openid', 'email', 'profile']
   },
   async function(accessToken, refreshToken, profile, cb) {
