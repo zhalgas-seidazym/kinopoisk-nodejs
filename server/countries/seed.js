@@ -24,7 +24,7 @@ const data = [
 ]
 
 async function writeDataCountry(){
-    const length = await Country.countDocuments()
+    const length = await Country.countDocuments({})
     if(length == 0) {
         await data.map((item, index) => {
             new Country({
