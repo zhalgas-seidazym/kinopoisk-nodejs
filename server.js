@@ -13,7 +13,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 7,
     resave: false,
     store: mongooseStore.create({
-        mongoUrl: 'mongodb://localhost:27017'
+        mongoUrl: 'mongodb+srv://zhalgasseidazym2005:NXzIpHAJ8Fp7od7U@kinopoisk-app.95x5lts.mongodb.net/'
     })
 }))
 app.use(passport.initialize())
