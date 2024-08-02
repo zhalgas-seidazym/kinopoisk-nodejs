@@ -1,5 +1,5 @@
 const User = require('./users')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 // https://www.npmjs.com/package/bcryptjs site of bcrypt
 const signUp = async(req, res) => { 
