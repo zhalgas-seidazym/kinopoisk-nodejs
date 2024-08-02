@@ -1,0 +1,42 @@
+.container{
+    padding: 100px 5% 50px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.main{
+    padding: 20px 40px 70px;
+    background-color: #fff;
+    min-height: 80vh;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.pages{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.pages a{
+    color: #fff;
+    text-align: center;    
+    width: 15px;
+    height: 15px;
+    text-decoration: none;
+    background-color: rgb(221, 221, 221);
+    padding: 7px;
+    border-radius: 50%;
+}
+
+a.current-page{
+    background:  rgb(150, 150, 150);
+    color: lavender;
+}
+
+a.current-genre{
+    border-bottom: 2px solid #f50 !important;
+}

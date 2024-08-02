@@ -1,0 +1,42 @@
+.add-series-btn{
+    width: 40%;
+    box-sizing: border-box;
+    border: none;
+    background: gray;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+}
+
+.series{
+    width: 100%;
+    margin: 15px 0;
+}
+
+.series p{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.series input{
+    width: 100%;    
+    padding: 15px 20px;
+    outline: none;
+    border: 1px solid rgba(31, 31, 31, .1);
+    border-radius: 7px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+#urls{
+    width: 40%;
+}
+
+#urls .fieldset{
+    width: 100%;
+}

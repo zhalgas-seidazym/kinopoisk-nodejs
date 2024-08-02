@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <title>Edit</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    
+    <div class="container">
+        <div class="main">
+            <form action="/api/film/edit" method="POST" enctype="multipart/form-data" class="form">
+                <h3>Редактировать фильм</h3>
+                <fieldset>
+                    <input type="hidden" value="<%= film._id %>" name="id">
+                </fieldset>
+                <fieldset class="fieldset">
+                    <label for="">Картинка фильма</label>
+                    <input type="file" name="image">
+                </fieldset>
+                <fieldset class="fieldset">
+                    <label for="">Название фильма на русском</label>
+                    <input type="text" value="<%= film.title_rus %>" placeholder="Введите название фильма на русском" name="title_rus">
+                </fieldset>
+                <fieldset class="fieldset">
+                    <label for="">Название фильма на английском</label>
+                    <input type="text" value="<%= film.title_eng %>" placeholder="Введите название фильма на английском" name="title_eng">
+                </fieldset>
+                <fieldset class="fieldset">
+                    <label for="">Год выпуска</label>
+                    <input type="text" value="<%= film.year %>" placeholder="Введите год выпуска фильма" name="year">
+                </fieldset>
+                <fieldset class="fieldset">
+                    <label for="">Длительность фильма</label>
+                    <input type="text" value="<%= film.time %>" placeholder="Введите длительность фильма" name="time">
+                </fieldset>
+                <fieldset class="fieldset">
+                    <label for="">Страна выпуска</label>
+                    <select name="country">
+                        <% countries.forEach(country => { 
+                            if(country.id == film.country){
+
+                        %>
+                                <option value="<%= country._id %>" selected><%= country.name %></option>
+                        <% 
+                            }else{
+                        %>
+                                <option value="<%= country._id %>"><%= country.name %></option>
+                        <% }}) %>
+                    </select>
+                </fieldset>
+                <fieldset class="fieldset">
+                    <label for="">Жанры</label>
+                    <select name="genre">
+                        <% genres.forEach(genre => {
+                            if(genre.id == film.genre){
+                        %>
+                            <option value="<%= genre._id %>" selected><%= genre.name %></option>
+                        <% 
+                            }else{
+                        %>
+                            <option value="<%= genre._id %>"><%= genre.name %></option>
+                        <% }}) %>
+                    </select>
+                </fieldset>
+                <% if(film.video && film.video.length > 2){ %>
+                    <a class="add-series-btn" id="addFilmUrlBtn" onclick="addFilmUrl()">Добавить ссылку на фильм</a>
+                    <div id="urls">
+                        <fieldset class="fieldset">
+                            <label for="">Ссылка на фильм</label>
+                            <input type="text" value="<%= film.video %>" placeholder="Введите ссылку на фильм" name="video">
+                        </fieldset>
+                    </div>
+                <% }else if(film.series && film.series.length > 0){ %>
+                    <a class="add-series-btn" id="addSeriesBtn" onclick="addSeries()">Добавить серии</a>
+                    <div id="urls">
+                        <% film.series.forEach((s, i) => { %>
+                            <fieldset class="series">
+                                <label for=""><%=i + 1%> серия</label>
+                                <input type="text" value="<%= s %>" placeholder="Введите ссылку на серию" name="series">
+                            </fieldset>
+                        <% })
+                        %>
+                    </div>
+                <% } else { %>
+                    <a class="add-series-btn" id="addFilmUrlBtn" onclick="addFilmUrl()">Добавить ссылку на фильм</a>
+                    <a class="add-series-btn" id="addSeriesBtn" onclick="addSeries()">Добавить серии</a>
+                <% } %>
+                
+                <div id="urls"></div>
+                
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <%- include('./partials/script.ejs') %>
+</body>
+</html>
