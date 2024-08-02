@@ -6,7 +6,7 @@ const User = require('../auth/users.js')
 const Film = require('../films/films.js')
 const Rate = require('../rates/rates.js')
 
-const getRates = require('../../public/js/getRates.js')
+const getRates = require('../rates/getRates.js')
 
 router.get('/', async (req, res) => {
     const options = {}

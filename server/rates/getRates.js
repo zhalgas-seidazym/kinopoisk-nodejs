@@ -1,4 +1,4 @@
-const Rate = require('../../server/rates/rates.js')
+const Rate = require('./rates.js')
 
 async function getRates(films) {
     const rateFilm = []
